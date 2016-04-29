@@ -23,6 +23,9 @@ echo *** Installing PostGIS ***
 echo ' '
 echo --- PostGIS Installed - note there will be post-configuration steps needed ---
 
+# Set Locale
+sudo locale-gen en_GB.UTF-8
+
 # Install JRE for GeoServer
 echo ' '
 echo --- Installing JRE ---
