@@ -1,19 +1,21 @@
+echo 'Updating package lists...'
+apt-get -qq  update
+
 # Install PostGIS
 echo *** Installing PostGIS ***
 	sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt trusty-pgdg main" >> /etc/apt/sources.list'
 	wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add -
 	sudo apt-add-repository -y ppa:georepublic/pgrouting
-    sudo apt-get update
 	sudo apt-get install -y postgresql-9.4-postgis-2.1 pgadmin3 postgresql-contrib
 # Enable Adminpack
 #	sudo -u postgres psql
 #	CREATE EXTENSION adminpack;
-#	service postgresql restart 
+#	service postgresql restart
 #	SELECT pg_reload_conf();
 #	SELECT name, setting FROM pg_settings where category='File Locations';
 #	\q
 #	sudo su - postgres
-# Create user - note change it from postgisuser	
+# Create user - note change it from postgisuser
 #	createuser -d -E -i -l -P -r -s postgisuser
 #	echo "default postgres user <postgisuser> created - please change"
 
@@ -53,11 +55,11 @@ cd /usr/local
 echo ' '
 echo --- Downloading GeoServer package - please wait ---
 
-wget -nv -O tmp.zip http://sourceforge.net/projects/geoserver/files/GeoServer/2.7.1.1/geoserver-2.7.1.1-bin.zip && unzip tmp.zip -d /usr/local/ && rm tmp.zip
+wget -nv -O tmp.zip http://sourceforge.net/projects/geoserver/files/GeoServer/2.8.3/geoserver-2.8.3-bin.zip && unzip tmp.zip -d /usr/local/ && rm tmp.zip
 
 echo ' '
 echo --- Package unzipped - configuring GeoServer directory ---
-cp -r /usr/local/geoserver-2.7.1.1/* /usr/local/geoserver && sudo rm -rf /usr/local/geoserver-2.7.1.1/
+cp -r /usr/local/geoserver-2.8.3/* /usr/local/geoserver && sudo rm -rf /usr/local/geoserver-2.8.3/
 
 echo ' '
 echo --- GeoServer Installed ---

@@ -1,9 +1,8 @@
 # GeoStack
 
 Forked from https://github.com/DruidSmith/vagrant-geoserver-postgis
-Vagrantfile and provisioner for a PostGIS/GeoServer box (running trusty64)
 
-![](http://cdn.rawgit.com/cfoellmann/chocolatey-packages/master/icons/vagrant.png) ![](http://www.geos.ed.ac.uk/~mscgis/13-14/s1366017/img/geoserver_logo.png) 
+Vagrantfile and provisioner for a PostGIS/GeoServer box (running trusty64)
 
 ### Background
 
@@ -33,18 +32,18 @@ The VM can be shut down by using 'vagrant halt' - and can be destroyed by using 
 
 After the VM is up, the user will want to change any relevant passwords and make appropriate changes...
 
-Not addressed:  Additional PostGIS setup once within postgres, for example 
+Not addressed:  Additional PostGIS setup once within postgres, for example
 
 > 	sudo -u postgres psql
 	CREATE EXTENSION adminpack;
-	service postgresql restart 
+	service postgresql restart
 	SELECT pg_reload_conf();
 	SELECT name, setting FROM pg_settings where category='File Locations';
 	\q
 	sudo su - postgres
     createuser -d -E -i -l -P -r -s postgisuser
     et cetera...
-    
+
 See PostGIS post-install instructions - http://postgis.net/install/   
 pgrouting not installed - line can be uncommented in provisioner script
 
