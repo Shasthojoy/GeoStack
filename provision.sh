@@ -13,13 +13,14 @@ echo *** Installing PostGIS ***
 #	SELECT pg_reload_conf();
 #	SELECT name, setting FROM pg_settings where category='File Locations';
 #	\q
-#	sudo su - postgres
+# sudo su - postgres
 # Create user - note change it from postgisuser
-#	createuser -d -E -i -l -P -r -s postgisuser
-#	echo "default postgres user <postgisuser> created - please change"
+#	createuser -d -E -i -l -P -r -s vagrant
+#	createdb
+#	exit
 
 # Install pgRouting package (for Ubuntu 14.04)
-# sudo apt-get install postgresql-9.4-pgrouting
+# sudo apt-get install postgresql-9.5-pgrouting
 echo ' '
 echo --- PostGIS Installed - note there will be post-configuration steps needed ---
 
