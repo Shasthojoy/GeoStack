@@ -14,9 +14,10 @@ sudo su - postgres
 createuser -d -E -i -l -P -r -s vagrant
 exit
 createdb
-exit
-
 psql
 CREATE EXTENSION postgis;
 CREATE EXTENSION postgis_topology;
+CREATE EXTENSION fuzzystrmatch;
+CREATE EXTENSION address_standardizer;
+
 ```
