@@ -14,10 +14,13 @@ sudo su - postgres
 createuser -d -E -i -l -P -r -s vagrant
 exit
 createdb
-psql
-CREATE EXTENSION postgis;
-CREATE EXTENSION postgis_topology;
-CREATE EXTENSION fuzzystrmatch;
-CREATE EXTENSION address_standardizer;
+psql -c "CREATE EXTENSION postgis;"
+psql -c "CREATE EXTENSION postgis_topology;"
+psql -c "CREATE EXTENSION fuzzystrmatch;"
+psql -c "CREATE EXTENSION address_standardizer;"
 
 ```
+
+### Loading Data
+
+Copy Shapefiles into the `/data` directory and then run `./load.sh`
