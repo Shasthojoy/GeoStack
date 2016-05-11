@@ -23,4 +23,12 @@ psql -c "CREATE EXTENSION address_standardizer;"
 
 ### Loading Data
 
-Copy Shapefiles into the `/data` directory and then run `./load.sh`
+Copy Shapefiles into the `/data` directory and then:
+
+```
+vagrant ssh
+cd /vagrant
+./load.sh
+```
+
+The `shp2pgsql` utility is set to import data in the British National Grid (BNG) coordinate reference system (SRID:27700), for example [Ordnance Survey OpenData](https://www.ordnancesurvey.co.uk/business-and-government/products/opendata-products-grid.html) products.
